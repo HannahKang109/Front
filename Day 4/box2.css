@@ -1,0 +1,25 @@
+@charset 'utf-8';
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin : 0;
+}
+.top-box{
+    width: 700px;
+    height : 2000px;
+    background-color: green;
+
+
+}
+.bottom-box{
+    width: 700px;
+    height : 70px;
+    background-color: yellowgreen;
+    
+    position : fixed;
+    bottom : 0;
+    left : 0;
+    right : 0;
+
+}
