@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+.box{
+    width:80px;
+    height:80px;
+    display: inline-block;
+    background-color: yellow;
+    font-size:30px;
+    text-align: center;
+    position: fixed;
+}
+#one{
+    left:100px;
+}
+#two{
+    left:10px;
+    bottom:10px;
+
+}
+#three{
+    left:200px;
+}
+#top-box{
+    height:200px;
+    border : 1px solid black;
+}
+#bottom-box{
+    border : 1px solid black;
+    height : 800px;
+}
