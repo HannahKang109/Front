@@ -1,0 +1,13 @@
+@charset 'Utf-8';
+
+.box{
+    height : 50px;
+    border : 1px solid black;
+    overflow: auto;
+    /*
+    hidden : 컨텐츠 내용이 넘어간 내용 감추기
+    visible : 넘어간 내용 보이기
+    scroll : 넘어간 내용 스크롤을 이용하여 확인 가능
+    auto : 안 넘어가면 hidden, 넘어가면 scroll로 설정
+    */
+}
