@@ -1,0 +1,47 @@
+@charset 'utf-8';
+/* box 클래스*/
+.box{
+    background-color: aliceblue;
+    background-image: url('https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development-460x306.jpg');
+    /*실제 url 이미지 주소 복사를 넣어도 되고, 저장해서 파일명을 넣어도 됨*/
+    background-position-x: center;
+    /*
+    background-position-x: center; x축 기준으로 가운데
+    background-position-y: center; y축 기준으로 가운데
+    */
+    background-repeat: no-repeat;
+    height: 400px;
+}
+<!DOCTYPE html>
+<html><head><title>텍스트 그림자</title>
+<style>
+div { 
+    font : normal 24px verdata;
+    cursor: crosshair;
+}
+.dropText {
+	text-shadow : 3px 3px;
+}
+.redText { 
+	text-shadow : 3px 3px red;
+}
+.blurText {
+	text-shadow : 3px 3px 5px skyBlue;
+}
+.glowEffect {
+	text-shadow : 0px 0px 3px red;
+}
+.wordArtEffect { 
+	color : white;
+	text-shadow : 0px 0px 3px darkBlue;
+}
+.threeDEffect { 
+	color : white;
+	text-shadow : 2px 2px 4px black;
+}
+.multiEffect { 
+	color : yellow;
+	text-shadow : 5px 5px 5px black, 
+					0 0 25px blue, 0 0 5px darkblue;
+}
+</style></head>
