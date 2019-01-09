@@ -1,0 +1,36 @@
+@charset 'utf-8';
+/*css 작업을 할때 코드 순서는 조상,자손 순으로 작업하는 것이 좋음*/
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    
+}
+body{margin : 0;
+     padding : 0;
+     font-size : 14px;
+}
+#box1{
+    height:150px;
+    background-color: aquamarine;
+    font-size:0px; 
+}
+#box1>*{
+    font-size:14px;
+}
+#box-left,
+#box-right,
+#box-left1,
+#box-right1
+{
+     border:solid 1px black;
+     height : 100px;
+     width : calc(100% / 2);
+     /*calc 함수는 연산자를 공백으로 구분하기 때문에
+     값과 연산자 사이에는 항상 공백을 입력해야 한다.
+     단 단위는 수치와 붙여 써야한다.*/
+     display: inline-block;
+}
+#box-right1{
+    float: right;
+}
