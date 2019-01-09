@@ -1,0 +1,56 @@
+@charset 'Utf-8';
+
+table{
+    border : 1px solid black;
+    border-collapse : collapse;
+    width : 100%;
+}
+td,th{
+    border : 1px solid black;
+    text-align : center;
+}
+tbody>tr{
+    background-color: blueviolet;
+}
+tbody>tr:nth-child(2n-1){
+    background-color: brown;
+}
+/* nth-child(x)
+   x가 짝수일때 2n 또는 even   
+   x가 홀수일때 2n-1 또는 odd
+
+   3개씩 바꾸려면 
+   x가 3n-2이면 1,4,7,10...
+   x가 3n-1이면 2,5,8,11...
+   x가 3n이면 3,6,9,12...
+*/
+tbody>tr:nth-child(2n):hover{
+    background-color: blue;
+}
+tbody>tr:hover{
+    background-color:  green;
+
+}
+
+/*셀렉터 관계
+1. 부모-자식
+부모셀렉터>자식셀렉터
+tbody>tr
+2. 조상-자손
+조상셀렉터 자손셀렉터
+tbody tr
+3. 형제
+종류1: 태그셀렉터클래스셀렉터
+div.box
+종류2: 클래스셀렉터클래스셀렉터
+.container.font-12
+종류3: 태그아이디
+div#top
+종류4: 아이디클래스
+#top.container
+
+    div>table>tr
+    div table>tr
+    div table#top
+
+*/

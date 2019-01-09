@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="ex7.css">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <!--실제 화면에는
+        thead
+        tbody
+        tfoot
+        순으로 출력된다.-->
+        <thead>
+            <tr>
+               <th>번호</th> 
+               <th>이름</th> 
+               <th>과목</th> 
+               <th>성적</th> 
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>합계</td>
+                <td colspan="3">200</td>
+                <!--
+                    row:행
+                    col:열
+                    colspan : 열을 묶어줌
+                    colspan="3" : 3개의 열을 묶어서 하나로 만듬
+                    rowspan="4" : 4개의 행을 묶어서 하나로 만듬
+                                  이후에 해당 자리에 들어가 내용을 지움
+                -->
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th>1</th> 
+                <th>강한나</th> 
+                <th rowspan="4">CSS</th> 
+                <th>90</th> 
+            </tr>
+            <tr>
+                <th>2</th> 
+                <th>노지연</th>
+                <!--
+                    이 주석 자리에는 원래 이 코드가 들어가야 하는데
+                    <th>CSS</th>
+                    위에서 rowspan을 이용했기 때문에 지워야 함
+                --> 
+                <th>100</th> 
+            </tr>
+            <tr>
+                <th>3</th> 
+                <th>손유미</th> 
+                <th>80</th> 
+            </tr>   
+             <tr>
+                <th>4</th> 
+                <th>이미선</th> 
+                <th>70</th> 
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
