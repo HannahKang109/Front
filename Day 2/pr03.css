@@ -1,0 +1,47 @@
+@charset 'utf-8';
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin : 0;
+    padding: 0;
+}
+div{
+    border:solid 1px black;
+}
+.container{}
+/*지금 당장 사용할 클래스는 아님*/
+
+#top{
+    height : 100px;
+    border-color : red;
+}
+#bottom{
+    border-color: blue;
+    padding: 8px;
+    /*보통 패딩으로 하는게 마진보다 쉬움*/
+}
+#bottom-inner{
+    border-color:green;
+    font-size : 0px;
+}
+
+#bottom-inner>*{
+    font-size : 14px;
+}
+
+#bottom-left,
+#bottom-right
+{
+
+     height : 400px;
+     width : calc((100% - 8px) / 2);
+     /* 숫자 사이에 공백 필요 / 가로 계산*/
+     display: inline-block;
+     /*인라인은 옆으로 블럭은 아래로*/
+
+
+}
+#bottom-right{
+    float:right;
+}
