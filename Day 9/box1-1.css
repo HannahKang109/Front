@@ -1,0 +1,51 @@
+@charset 'utf-8';
+/* <문제2>
+container 박스 하나를 생성
+width : 100%, border:1px solid black
+container 박스 안에 크기에 따라 박스의 개수를 다르게 하도록 코드를 작성
+500px이하이면 박스가 1개가 되도록 분할
+1000px이하이면 박스가 2개가 되도록 분할
+1001px이상이면 박스가 3개가 되도록 분할 */
+
+*{
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+}
+
+div{
+	border : 1px solid black;
+}
+
+.container::after{
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.box1,
+.box2,
+.box3{
+	width: calc(100% / 3);
+	height : 200px;
+	display: inline-block;
+	float : left;
+}
+@media (max-width:500px){
+  .box1 {
+		width : 100%;
+	}
+	.box2,
+	.box3 {
+		display : none;
+	}
+}
+@media (min-width:501px) and (max-width:1000px){
+	.box1,
+	.box2 {
+		width : 50%;
+	}
+	.box3 {
+		display : none;
+	}
+}
