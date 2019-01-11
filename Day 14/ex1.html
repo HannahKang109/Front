@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>메세지 출력</title>
+</head>
+<body>
+	<input type="text" id="id">
+	<button class="btn">메시지 출력</button>
+	<!-- 
+	1.제이쿼리를 이용하여 입력창에 입력된 값을 버튼을 클릭하면 
+		해당 입력값이 메세지로 출력되도록 작성하세요. 
+	- 입력창에 있는 값 가져오기
+	- 버튼을 클릭하면 이벤트 처리하기
+	2. 입력창에 입력된 값이 변경되면 콘솔에 해당 입력값이 출력되도록 작성하세요.
+	- 입력창에 있는 값 가져오기
+	- 입력창에 값이 변경되면 이벤트 처리하기 -->
+<script>
+	$(document).ready(function(){
+		$('.btn').click(function(){
+			// $('.btn').blur(function(){
+			//val(), text(), html()
+			//val() : input태그의 값을 가져올 때, 속성 value에 저장된 값을 가져옴
+			//text() : input태그가 아닌 태그의 문자열을 가져올 때
+			//html() : 해당 객체 안에 있는 html 코드를 가져올 때
+		alert(getVal('#id'));
+	});
+			//this는 이벤트 동작 객체와 값을 가져오거나 변경하려는 객체가 같을때 사용
+			// 아래 예제처럼 이벤트가 실행되는 text 클래스를 가진 객체와
+			// 실제 값이 바뀌는 text 클래스를 가진 객체는 동일 객체이기 때문에 this를 사용할 수 있다.
+		$('#id').change(function(){
+			var id = $('#id').val();
+		// 	alert(id);
+		// });
+			console.log(getVal(this));
+		});
+		function getVal(textObj){
+			return $(textObj).val();
+		}
+	});
+</script>
+
+</body>
+</html>
