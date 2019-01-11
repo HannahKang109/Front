@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+
+*{
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+	position: relative;
+	font-size: 20px;
+}
+
+.box{
+	width: 500px;
+	height: 600px;
+	background-color: lightpink;
+	top : 100px;
+	left : 300px;
+	position : absolute;
+	padding : 20px;
+
+}
+
+.row{
+	width : 500px;
+	height: 100px;
+}
+
+#submit{
+	background-color : lightblue;
+	width : 100px;
+	height : 30px;
+}
+
+#avail,
+#regex,
+#length,
+#regex2,
+#notavail{
+	background-color : lightyellow;
+	font-style : red;
+}
