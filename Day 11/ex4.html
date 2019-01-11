@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="show()">클릭</button>
+	<div id="content">
+		<!-- 클릭 버튼을 누르면 아래 코드를 추가한 효과가 나타남
+		<div>
+			안녕하세요
+		</div> -->
+
+	</div>
+	Hello<br>
+	<!-- 
+		학년마다 반이 달라서 선택한 학년에 따라 반도 바뀌도록 해줌
+		학년을 선택하고 확인 버튼을 누르면 선택할 수 있는 반의 범위가 달라지게 함
+		1학년 : 1~3
+		2학년 : 1~4
+		3학년 : 1~5
+		-->
+	학년
+	<select id="grade" onchange="getClass()">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+	반
+	<select id="class">
+	</select>
+	<button onclick="getClass()">학년 클릭</button>
+	<script>
+		function show(){
+			var content = document.getElementById('content');
+			//subDiv :<div></div>객체 생성
+			var subDiv = document.createElement('div');
+			//text : 텍스트 노드 안녕하세요를 생성
+			var text = document.createTextNode('안녕하세요');
+			//subDiv.appendChild(text) : div 태그 안에 안녕하세요라는 텍스트 노드 추가
+			//<div>안녕하세요</div>    <- 요게 결과물
+			subDiv.appendChild(text);  // 태그와 글자 연결
+			//id가 content인 요소 안에 <div>안녕하세요</div>를 추가
+			content.appendChild(subDiv);   //subdiv태그 안에 content를 넣겠음이란 의미
+			console.log(content);
+			console.log(subDiv);
+			// var str = "안녕하세요";
+			// document.write(str);
+		}
+
+		function getClass(){
+			var	classSelect = document.getElementById('class'); 
+			var gradeNum = document.getElementById('grade').value;
+
+			//반 셀렉트박스에 내용을 지우는 함수
+			clearSelect(classSelect);
+			/*반 셀렉트박스에 내용을 추가하는 함수
+			classSelect : 반 select태그 객체를 의미
+			gradeNum : 학년
+			*/
+			setSelect(classSelect, gradeNum);
+
+		}
+		function setSelect(classSelect, gradeNum){
+			var arr = [3,4,5];
+			for(var i=1; i<=arr[gradeNum-1]; i++){
+				//<option></option>
+				var option = document.createElement('option');
+				//<option value=i></option>
+				option.value = i;
+				var text = document.createTextNode(i);
+				//<option value=i>i</option>		
+				option.appendChild(text);
+				//<select>...<option value=i>i</option></select>					
+				classSelect.appendChild(option);
+				list.push(option); //옵션을 리스트에 푸쉬
+			}
+		}
+		function clearSelect(classSelect){
+			for(var i=0; i<list.length; i++){
+				classSelect.removeChild(list[i]);
+			}
+			list = new Array();
+		}
+		//반 셀렉트 박스에 추가한 option 태그 정보들을 저장하기 위한 배열
+		var list = new Array();
+		getClass();
+
+	</script>
+</body>
+</html>
