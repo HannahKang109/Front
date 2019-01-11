@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="jquery-3.3.1.js"></script>
+	<title>Document</title>
+	<style>
+	.red{
+		outline-color: red;
+	}
+
+
+	
+	</style>
+</head>
+<body>
+	<!-- 123 -->
+	<input type="text" id="id" value="123">
+	<input type="text" class="pw" value="456">	
+	<input type="text" class="pw" value="111">
+	<button class="btn" onclick="a()">클릭1</button>	
+	<button class="btn">클릭2</button>
+	<form class="form">
+		<button>제출</button>
+	</form>	
+	<script>
+		/* document(문서)가 다 로딩되고 실행해라 */
+		$(document).ready(function(){
+			var id = $('#id').val();
+			console.log(id);
+			var pw = $('.pw').val();
+			console.log(pw);
+			// 가져올때는 매개변수가 없고 설정할때는 매개변수를 넣어서 설정
+			$('#id').val('789');
+			// 클래스 이름이 pw인 객체들의 value를 7890으로 설정해라.
+			$('.pw').val('7890');
+			// 클래스 이름이 btn인 객체들을 클릭하면 function()을 실행해라.
+			$('.btn').click(function(){
+				console.log('클릭했습니다.');
+			});
+			$('.form').submit(function(){
+				console.log('제출 실패');
+				return false;
+			});
+			console.log($('#id').css('color'));
+			$('#id').css('color','red');			
+			$('#id').css('background-color','yellow');
+			
+			$('input').focus(function(){
+			$(this).addClass('red');	
+		});	
+		//outline이 아니라 border color로 한 경우는 blur필요
+		// 	$('input').blur(function(){
+		// 	$(this).removeClass('red');	
+		// });	
+		// alert(123);  // 안에 있을때는 바디에 있는 123이 구현된 후 출력
+		});
+		// alert(123);  // 여기 있을때는 여기가 먼저 출력되고 바디에 있는 123이 출력
+		</script>
+</body>
+</html>
