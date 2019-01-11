@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="jquery-3.3.1.js"></script>
+	<title>Document</title>
+<style>
+	div{
+		width : 80px;
+		height : 80px;
+		line-height: 80px;
+		text-align: center;
+		font-size : 40px;
+		display: inline-block;
+		border : 1px solid black;
+	}
+	.red{
+		background-color: red;
+	}
+
+</style>
+</head>
+<body>
+	<div class="num1">1</div>
+	<div class="num2">2</div>
+	<div class="num3">3</div>
+	<div class="num4">4</div>
+	<div class="num5">5</div>
+	<script>
+ 	$(document).ready(function () {
+		// 1. 박스 중 하나를 클릭하면 동작이 일어나도록 제이쿼리로 등록
+		 $('div').click(function(){
+		// 2. 클릭한 객체의 클래스를 토글
+		// this : 현재 이벤트가 실행되는 객체
+			 $(this).toggleClass('red');
+		 })
+
+// 		-------------내가한것----------------
+// 		$('.num1').click(function () {
+// 		$('.num1').toggleClass('red');
+// 	});
+// 		$('.num2').click(function () {
+// 		$('.num2').toggleClass('red');
+// 	});
+// 		$('.num3').click(function () {
+// 		$('.num3').toggleClass('red');
+// 	});
+// 		$('.num4').click(function () {
+// 		$('.num4').toggleClass('red');
+// 	});
+// 		$('.num5').click(function () {
+// 		$('.num5').toggleClass('red');
+// 	}); 
+	});	
+	</script>
+</body>
+</html>
