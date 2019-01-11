@@ -1,0 +1,66 @@
+@charset 'utf-8';
+*{
+	box-sizing : border-box;
+	margin : 0;
+	padding : 0;
+}
+nav{
+	display : block;
+	height : 40px;
+	line-height: 40px;
+	font-size : 20px;
+	background-color: gray;
+}
+ul{
+	list-style : none;
+	display: inline-block;
+}
+li{
+	display: inline-block;
+	margin-left : 15px;
+}
+#sub-menu,
+#ham{
+	display : none;
+}
+
+#ham>li{
+	width : 30px;
+	border : 1px solid black;
+	border-radius : 5px;
+	padding : 0 5px;
+	margin-top : 5px;
+	line-height : 30px;
+	height : 30px;
+}
+
+#sub-menu{
+	width : 100px;
+	display : none;
+	position : absolute;
+	background: white;
+}
+#sub-menu>li{
+	display : block;
+	margin : 0;
+	padding-left : 15px;
+}
+#sub-menu.display-block,
+.display-block{
+	display : block;
+}
+/* id와 클래스중 충돌이 있을 경우 id가 높음 */
+@media(max-width : 640px){
+	#menu{
+		display : none;
+	}
+	#ham{
+		display : block;
+	}
+}
+/* @media(min-width : 641px){
+	#sub-menu.display-block{
+		display : none;
+	}
+} */
+

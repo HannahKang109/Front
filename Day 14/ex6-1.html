@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="ex6-1.css">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
+			$('#ham').click(function(){
+				$('#sub-menu').toggleClass('display-block');
+			});
+			$(window).resize(function(){
+				console.log('test');
+				console.log($(window).width());
+				if($(window).width()>640){
+					$('#sub-menu').removeClass('display-block');
+				}
+			});
+		});
+	</script>
+	<nav>
+		<ul id="menu">
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+		</ul>
+		<ul id="ham">
+			<li><i class="fas fa-bars"></i></li>
+		</ul>
+		<ul id="sub-menu">
+				<li>뉴스</li>
+				<li>까페</li>
+				<li>메일</li>
+				<li>블로그</li>
+				<li>사전</li>
+				<li>지식인</li>
+				<li>쇼핑</li>
+				<li>날씨</li>
+				<li>지도</li>
+				<li>영화</li>
+				<li>뮤직</li>
+				<li>책</li>
+		</ul>
+	</nav>
+	1234567
+</body>
+</html>
