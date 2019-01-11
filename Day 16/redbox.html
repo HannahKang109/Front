@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Document</title>
+	<style>
+	div{
+		border: 1px solid black;
+		width: 100px;
+		height: 100px;
+	}
+	/* div:hover{
+		background-color: red;
+	} */
+
+.back-red{
+	background-color: red;
+}
+
+
+	</style>
+
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
+		// $('div').mouseover(function(){
+		// 	$(this).css('background-color','red')
+		// });
+		// $('div').mouseleave(function(){
+		// 	$(this).css('background-color','')
+		// });
+	
+		$('div').hover(function(){
+			$(this).toggleClass('back-red')
+		});
+	});
+			</script>
+<div></div>
+	</body>
+</html>

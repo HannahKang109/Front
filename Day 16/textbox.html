@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Document</title>
+	<style>
+div{
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	font-size : 0px;
+}
+.display-block{
+	display: block;
+} 
+
+div{
+	visibility: visible;
+} 
+
+div:hover{
+	font-size: 20px;
+}
+
+	</style>
+
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
+		
+		//방법1
+		// $('div').hover(function(){
+		// 	$('h3').toggleClass('display-block')
+		// });
+	/*
+	hover(함수1, 함수2) : 함수1은 들어올 때 호출, 함수 2는 나갈 때 호출
+	hover(함수)					: 들어올 때와 나갈 때 함수를 각각 호출
+	*/
+	
+		//방법2
+		// $('div').hover(function(){
+		// 	$(this).text('hover 예제');
+		// },function(){
+		// 	$(this).text('');
+		// });
+	
+		//방법3
+	//마우스가 div로 들어올 때
+		// $('div').mouseenter(function(){
+		// 	$(this).text('hover 예제');
+	// });
+	//마우스가 div로 나갈 때
+	// 	$('div').mouseleave(function(){
+	// 		$(this).text('');
+	// });
+	});
+	</script>
+<div>
+	<h3>hover 예제</h3>
+</div>
+	</body>
+</html>
