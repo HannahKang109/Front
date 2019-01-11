@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" class="ip" id="id">
+	<input type="text" class="ip" id="pw">
+	<button>버튼</button>
+	<script>
+	var pw1 = document.getElementById('pw');
+	console.log(pw1);
+	var pw2 = document.getElementsByClassName('ip')[1];
+	console.log(pw2);
+	var pw3 = document.querySelector('.ip#pw') //<- '#pw'로 써도 됨
+	console.log(pw3);
+	</script>
+</body>
+</html>
