@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<p class="text">제 이름은 </p>
+	<script>
+	$(document).ready(function(){
+		$('p').prepend('안녕하세요.');
+		$('p').append('강한나입니다.');
+		$('p.text').before('<p>자기소개 시작</p>');
+		$('p.text').after('<p>자기소개 끝</p>');
+	});
+	</script>
+</body>
+</html>
