@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="jquery-3.3.1.js"></script>
+	<title>Document</title>
+<style>
+	div{
+		width : 80px;
+		height : 80px;
+		line-height: 80px;
+		text-align: center;
+		font-size : 40px;
+		display: inline-block;
+		border : 1px solid black;
+	}
+</style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div class="test">5</div>
+	<script>
+	$(document).ready(function(){
+		//first() : 선택된 객체들 중 첫번째 객체
+		//.점을 활용한 체이닝 기법  
+		//first(): div 태그의 첫번째 것만 실행
+		$('div').first().css('background-color','red'); 
+		//last() : 마지막 것만 아래와 같이 바꿔라
+		$('div').last().css('border-color','blue');
+		//eq(num) : num+1번째 객체만 실행 / 맨처음은 0번부터
+		$('div').eq(1).css('font-weight','700');
+		$('div').filter('.test').css('color', 'pink');
+		// $('div.test').css('color', 'yellow');		위와 동일한 코드
+		//not()은 filter()의 반대
+		$('div').not('.test').css('background-color', 'yellow');
+	});	
+	</script>
+</body>
+</html>
