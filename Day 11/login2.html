@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+		<!-- name은 서버와 일치하게 전송할 때 사용
+		&nbsp; - 스페이스 하나의 역할 -->
+	<form>
+		<div>
+			아이디&nbsp;&nbsp;
+			<input type="text" placeholder="아이디" id="id" name="id" onchange="checkid()">
+		</div>
+		<div id="boxId1">
+			아이디는 5자이상 10자이하이어야 합니다.
+		</div>
+		<div id="boxId2">
+			아이디는 영문자로 시작하고, 영문과 숫자의 조합이어야 합니다.
+		</div>
+		<div>
+			비 번&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="password" placeholder="비 번" id="pw" name="pw" onchange="checkpw()">
+		</div>
+		<div id="boxId3">
+			비밀번호는 8자이상 20자이하이어야 합니다.
+		</div>
+		<div id="boxId4">
+			비밀번호는 영문과 숫자의 조합이어야 합니다.
+		</div>
+		<div>
+			비번확인<input type="password" placeholder="비번확인" id="repw" name="repw" onchange="checkrepw()">
+		</div>
+		<div id="boxId5">
+			비밀번호와 비밀번호 확인이 일치하지 않습니다.
+		</div>
+		<div>
+			<input type="radio" name="gender" value="female" checked>여성
+			<input type="radio" name="gender" value="male">남성
+		</div>
+		<button onclick="return check()">회원가입</button>
+	</form>
+	<script>
+		/*
+		목적 : 정규표현식과 주어진 텍스트를 비교하여 유효성 검사를 확인
+		입력1 : 정규표현식, 입력2 : 텍스트
+		리턴 : 유효성 검사 결과로 true는 일치, false는 불일치
+		*/
+		function checkValidation(regex, text){
+			if(regex.test(text))
+				return true;
+				return false;
+		}
+		/*
+		목적 : 아이디 유효성 검사를 확인하여 일치 여부를 알려주고 불일치시 메시지를 출력
+		리턴 : 유효성 검사 결과로 true는 일치, false는 불일치
+		*/
+		function checkid(){
+			var id = document.getElementById('id').value;
+			var regex = /^[A-z][A-z0-9]{4,9}$/;
+			clearBox('boxId1');
+			clearBox('boxId2');
+			if(id.length < 5 || id.length > 10){
+				showBox('boxId1')
+				return false;
+			}
+			if(!checkValidation(regex,id)){
+			showBox('boxId2');
+			return false;
+		}
+			return true;
+		}
+
+		function checkpw(){
+			var pw = document.getElementById('pw').value;
+			var regex = /^[A-z0-9]*(\d[A-z]|[A-z]\d)[A-z0-9]*$/;
+			clearBox('boxId3');
+			clearBox('boxId4');
+			if(pw.length < 8 || pw.length > 20){
+				showBox('boxId3')
+				return false;
+			}
+			if(!checkValidation(regex,pw)){
+			showBox('boxId4');
+			return false;
+		}
+			return true;
+		}
+
+		function checkrepw(){
+			var pw = document.getElementById('pw').value;
+			var repw = document.getElementById('repw').value;
+			clearBox('boxId5');
+			if(pw != repw ){
+			showBox('boxId5');
+			return false;
+		}
+			return true;
+		}
+
+
+		/*
+		아이디가 id인 박스를 안보이게 감추는 함수
+		*/
+		function clearBox(id){
+			var element = document.getElementById(id);
+			if(element != null)
+				element.style.display = 'none';
+		}
+		/*모든 에러 관련 메시지 박스를 감추는 함수*/
+		function clear(){
+			clearBox('boxId1');
+			clearBox('boxId2');
+			clearBox('boxId3');
+			clearBox('boxId4');
+			clearBox('boxId5');
+		}
+		function check(){
+			var isSubmit = true;
+			//아이디 유효성 검사가 실패하면 처리
+			//각각을 확인해야 해서 else if가 아니라 if로 처리함
+			if(!checkid())
+				isSubmit = false;
+			if(!checkpw())
+				isSubmit = false;
+			if(!checkrepw())
+				isSubmit = false;
+			return isSubmit;
+		}
+		/*아이디가 id인 박스를 보여주는 함수*/
+		function showBox(id){
+			var element = document.getElementById(id);
+			if(element != null)
+				element.style.display = 'block';
+		}
+		clear();
+
+
+	</script>	
+</body>
+</html>
