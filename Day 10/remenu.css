@@ -1,0 +1,70 @@
+@charset 'utf-8';
+
+*{
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+}
+ul,li{
+	list-style: none;
+}
+li{
+	display: inline-block;
+	text-align: center;
+}
+.nav{
+	height: 50px;
+	background-color:red;
+}
+.ham-menu{
+	display: none;
+	padding: 0 9px;
+}
+.menu{
+	display: block;
+}
+.menu li{
+	height: 50px;
+	line-height: 50px; 
+}
+.ham-in{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	font-size : 30px;
+	color : white;
+	line-height: 50px;
+	cursor: pointer;
+}
+.sub-menu{
+	display: none;
+  	position: absolute;  	/*기본 block으로 쓰면 기존 이미지가 밀릴 수 있음 */
+	top : 50px;
+	left : 0;
+	border : 1px solid red;
+	border-bottom : none;
+	width : 300px;
+
+}
+.sub-menu li{
+	display: block;
+	line-height : 50px;
+	height : 50px;
+	border-bottom: 1px solid red;
+}
+
+.ham-in:hover{
+
+}
+
+@media(max-width : 769px) {
+	.ham-menu{
+		display: block;
+	}
+	.menu{	
+		display : none;
+	}
+	.sub-menu{
+		display : block;
+	}
+}
