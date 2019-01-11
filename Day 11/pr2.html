@@ -1,0 +1,59 @@
+<!-- 비밀번호 입력창과 비밀번호 입력확인창을 만들고 버튼을 누르면
+비밀번호와 비밀번호 확인이 일치하는지 알림창으로 띄워주세요.
+
+1. 비밀번호 입력창에 있는 텍스트를 가져온다.
+2. 비밀번호 확인입력창에 있는 텍스트를 가져온다.
+3. 비교하면 같으면 같다는 메시지 출력 다르면 다르다는 메시지 출력한다. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">ㅣ
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="password" id="pw">
+	<input type="password" id="pw2">
+	<button onclick="comparePW()">비밀번호 확인</button>
+	<br>
+	<!-- 기본 document.createElement 예제 -->
+	<button onclick="showDetail()">상세보기</button>
+	<div id="detail"></div>
+	<script>
+	function comparePW(){
+		var pas = document.getElementById('pw').value;
+		var pas2 = document.getElementById('pw2').value;
+		if( pas == "" ){
+			alert('비밀번호를 입력하세요.');
+			return;
+		}
+		if ( pas == pas2 ){
+			alert('비밀번호가 일치합니다.')
+		}
+		else {
+			alert('비밀번호가 일치하지 않습니다.')
+		}
+	}
+
+	function showDetail(){
+		var detailNode = document.getElementById('detail');
+		var subDetail = document.createElement('span');
+		var text = document.createTextNode('상세 내용은 xxxx입니다.');
+		subDetail.appendChild(text);
+		clear();
+		detailNode.appendChild(subDetail);
+	}
+	function clear(){
+		var detailNode = document.getElementById('detail');
+		var subDetail = document.querySelector('#detail span');
+		console.log(subDetail);
+		if(subDetail != null)
+		detailNode.removeChild(subDetail);
+	}
+
+
+	</script>
+</body>
+</html>
