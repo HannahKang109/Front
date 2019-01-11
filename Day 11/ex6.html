@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="id">
+	<br>
+	<input type="text" id="pw" onchange="change(this)">
+	<br>
+	<input type="text" id="repw">
+	<script>
+		var idObj = document.getElementById('id');
+		//프로퍼티 방식
+		idObj.onchange = function(){
+			console.log(this.value);
+		}
+		//인라인 방식
+		function change(obj){
+			console.log(obj.value);
+		}
+
+		function change2(){
+			var text = this.value; //해당하는 함수를 호출하는 객체
+			console.log(text);
+			this.style.color = 'red';
+			this.style.backgroundColor = 'green';
+		}
+
+		var input3 = document.getElementById('repw');
+		if(input3.addEventListener){
+			input3.addEventListener('change', change2);
+		}else if(input3.attachEvent){
+			input3.attachEvent('onchange', change2);
+		}
+
+		var arr = [400,200,300,7];
+		console.log(arr);
+		arr.sort(function(a,b){
+			//return a-b;  // 오름차순 정렬  작은것부터-큰것
+			return b-a;  // 내림차순 정렬  큰것부터-작은것			
+		});
+		console.log(arr);
+
+	</script>
+</body>
+</html>
