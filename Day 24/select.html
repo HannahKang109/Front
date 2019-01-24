@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>과일 선택 옵션</title>
+</head>
+<body>
+    <select>
+        <option value="0">과일을 선택하세요.</option>
+        <option>바나나</option>
+        <option>사과</option>
+        <option>딸기</option>
+    </select>
+    <input type="text" readonly>
+    <script>
+        $(document).ready(function(){
+            $('select').change(function(){
+                //현재 셀렉트 박스에 있는 값을 가져옴
+                var data = $(this).val();
+                //현재 셀렉트 박스에 있는 값이 과일을 선택하세요 일 경우에는
+                //인풋창을 비우고 아니면 해당 과일 이름을 인풋창에 출력
+                if(data != '0')
+                    $('input').val(data);
+                else{
+                    $('input').val('');
+                    alert('과일을 선택하세요.');                    
+                }
+            })
+        }); 
+    </script>
+</body>
+</html>
