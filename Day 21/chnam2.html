@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.map{
+    width:100%!important;
+}
+</style>
+<body>
+    <div class="map">
+        <a href="http://map.daum.net/?urlX=610077&urlY=823585&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false&SHOWMARK=true" target="_blank">
+        <span style="background:#000;position:absolute;width:557px;opacity:.7;filter:alpha(opacity=70);color:#fff;overflow:hidden;font:12px/1.5 Dotum, '돋움', sans-serif;text-decoration:none;padding:7px 0px 0px 10px; height: 24px;">청남대지도</span>
+        <img width="565" height="308" src="http://map2.daum.net/map/mapservice?MX=610077&MY=823585&SCALE=2.5&IW=565&IH=308&COORDSTM=WCONGNAMUL" style="border:1px solid #ccc"></a>
+    </div>
+
+
+    <!--
+	* Daum 지도 - 약도서비스
+	* 한 페이지 내에 약도를 2개 이상 넣을 경우에는
+	* 약도의 수 만큼 소스를 새로 생성, 삽입해야 합니다.
+-->
+<!-- 1. 약도 노드 -->
+<div id="daumRoughmapContainer1546584191318" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+<!-- 2. 설치 스크립트 -->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="http://dmaps.daum.net/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1546584191318",
+		"key" : "rn7n",
+		"mapWidth" : "800",
+		"mapHeight" : "300"
+	}).render();
+</script>
+</body>
+</html>
