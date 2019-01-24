@@ -1,0 +1,62 @@
+@charset 'utf-8';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* float left나 right을 사용했을때
+이것을 감싸는 부모의 높이가 0이 되는 것을 방지 */
+nav::after{
+    content:'';
+    clear:both;
+    display: block;
+}
+.ham-menu{
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+    padding : 20px;
+}
+.sidebar{
+    position: absolute;
+    /* height를 따로 주지 않아도 top과 bottom을 0으로 하면 전체 가로를 덮는 메뉴가 됨     */
+	top: 0;
+    bottom: 0;
+    /* display: none; */
+    /*화면을 기준으로 오른쪽으로 보내 놓으면 클릭하면 스르륵 나오도록 구현 가능
+    display none으로 하면 스르륵이 아니고 클릭 즉시 나타남*/
+    right: -200px;
+    width: 200px;
+    background-color: white;
+    border : 1px solid black;
+}
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+}
+p{
+    padding : 20px;
+    font-size: 45px;
+    opacity : 0;
+    animation-name: open;   
+    animation-duration:2s;
+    animation-iteration-count: none;
+    animation-timing-function: ease-in;
+    /* 애니메이션이 끝나면 끝난 위치에서 유지 forwards/ 처음으로 돌릴려면 backwards  */
+    animation-fill-mode: forwards;
+    height : 200px;
+    overflow : auto;
+}
+
+/*webkit은 크롬에서만 가능*/
+p::-webkit-scrollbar {
+    display : none;  
+    /* 이 방법으로도 가능
+    background: transparent; */
+}
+
+@keyframes open{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
