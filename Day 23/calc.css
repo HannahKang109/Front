@@ -1,0 +1,48 @@
+@charset 'utf-8';
+*{
+    box-sizing: border-box;
+}
+.div-input{
+    width: 320px;
+    height: 80px;
+    border: 1px solid black;
+    text-align: right;
+}
+#dataStr{
+    font-size: 18px;
+    margin-top: 10px;
+
+}
+#dataNum{
+    font-size: 35px;
+    /* text-align: center; */
+}
+input{
+    width: 315px;
+    border: none;
+    outline: none;
+    text-align: right;
+}
+
+.div-row{
+    /* 원하는 부분의 상위의 클래스에 디스플레이 플렉스를 해 주면 불필요한 박스사이의 공간을 만들지 않음 */
+    display: flex;
+}
+.div-btn{
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    font-size: 35px;
+    line-height: 78px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+}
+.div-btn:hover{
+    background-color: gainsboro;
+}
+.div-btn:active{
+    background-color: gray;
+}
+
