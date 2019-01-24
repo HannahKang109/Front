@@ -1,0 +1,44 @@
+@charset 'utf-8';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg{
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../images/back1.jpg'); 
+    /* cover - 가로를 기준으로 비율을 맞춤
+    contain - 세로를 기준으로 비율을 맞춤 */
+    background-size: cover;
+    /* background-position: 50% 50%;  */
+    animation-name:ani;
+    animation-duration:8s; /* 0~100% 구현을 8초에 진행 */
+    animation-iteration-count:infinite;
+    animation-timing-function: ease-in-out;
+    opacity: 0.6;
+    
+    /* -webkit-animation-name:ani;
+    -webkit-animation-duration:4s; /* 0~100% 구현을 4초에 진행 */
+    /*-webkit-animation-iteration-count:infinite; */
+}
+body{
+    background-color: black;
+
+}
+@keyframes ani{
+    0%{background-image: url('../images/back5.jpg');}
+    25%{background-image: url('../images/back2.jpg');}
+    50%{background-image: url('../images/back3.jpg');}
+    75%{background-image: url('../images/back4.jpg');}
+    100%{background-image: url('../images/back5.jpg');}
+}
+
+/* 백그라운드 이미지 하나가 서서히 나타나도록 함
+    @keyframes ani{
+    from{opacity:0;}
+    to{opacity:1;}
+} */
