@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자식 윈도우</title>
+</head>
+<body>
+    자식창<br>
+    <input type="text" id="divData" readonly><br>
+    <input type="text" id="inputData">
+    <button id="btnOk" onclick="sendData()">확인</button>
+    <script>
+        //자식창에 입력된 것을 부모창으로 보내고 종료 예)주소 검색,입력 후 종료
+        function sendData(){
+            opener.document.getElementById('input').value
+             = document.getElementById('inputData').value;
+            window.close();
+        }
+    </script>
+</body>
+</html>

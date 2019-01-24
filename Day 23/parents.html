@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>부모창 클릭하여 자식창 열기</title>
+</head>
+<body>
+    <button id="btnChild">자식창 열기</button>
+    <input type="text" id="input">
+    <button id="btnData">데이터 전달</button>
+    <script>
+        $(document).ready(function(){
+            var childWin;
+            $('#btnChild').click(function(){
+            //부모창의 버튼을 클릭하면 자식창을 띄워라    
+                childWin = window.open('child.html','child','width=400, height=500')
+            });  
+            $('#btnData').click(function(){
+            //부모창에 입력한 값을 자식창에 띄워라(자식창을 먼저 띄워놓고 실행해야함)    
+                childWin.document.getElementById('divData').value=document.getElementById('input').value;
+            });   
+        });  
+    </script>
+</body>
+</html>
