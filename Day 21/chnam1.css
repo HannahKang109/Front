@@ -1,0 +1,32 @@
+@charset 'utf-8';
+.contents.swiper-container{
+    /*컨텐츠 내용이 없거나 화면을 다 채우지 못하더라도 swiper를 화면 전체에
+    적용하면서 스크롤바가 생기지 않도록 100vh에서 네비게이션 높이(40px)만큼 뺌*/
+    min-height: calc(100vh - 40px - 30px);
+}
+.title.swiper-container{
+    height: 30px;
+    background-color: #2f2d2d;
+    color:#fff;
+    font-size: 20px;
+    line-height: 28px;
+}
+.title .swiper-slide-active{
+    color:yellow;
+    font-weight: bold;
+}
+.title .swiper-slide{
+    width: auto;
+}
+/* 조상일때  */
+.contents .swiper-slide{
+    text-align: center;
+}
+.carousel-item img{
+    width: 100vw;
+    height: auto;
+}
+
+#daumRoughmapContainer1546584191318{
+    width:100%!important;
+}
