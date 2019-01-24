@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>(선생님)버튼 - 추가 인풋창 - 포커스</title>
+</head>
+<body>
+    <h1>좋아하는 과일을 입력하세요.</h1>
+    <div id="inputBox">
+        <input type="text" class="input"><br>
+    </div>
+    <button id="btnAdd">추가</button>
+    <script>
+        $(document).ready(function(){
+                var str = '<input type="text" class="input"><br>';  
+                var str2 = '<br><input type="text" class="input">';  
+            $('#btnAdd').click(function(){              
+                //after와 append 모두 가능  //append는 부모 아래 자식의 마지막에 추가 / after는 자신 다음에 있는 형제 
+                //div 태그를 이용해도 되지만 div 태그가 다수일 경우 원하지 않은 동작이 될 수 있음
+                //  $('div').append(str); 
+                //간단하면서 좋은 코드 
+                //  $('#inputBox').append(str);
+                //parent(),find()를 이용하기 위해 조금 복잡하게 작성된 코드
+                //  $(this).parent().find('#inputBox').append(str);  
+                $('.input').last().after(str2);
+                //input클래스가 있는 객체 모두를 한번씩 focus()를 실행하고
+                //최종적으로 마지막에 있는 객체가 focus()가 된다.
+                // $('.input').focus();
+                //마지막 객체만 focus()를 한다.
+                $('.input').last().focus();
+            });
+                // 아래 코드는 안됨
+                // $('.input').last().focus(function(){
+                //     $(this).css("background-color","red");
+                // });
+        });  
+    </script>
+</body>
+</html>
