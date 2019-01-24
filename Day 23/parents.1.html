@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>부모창에서 사이즈 입력하면 그에 맞는 사이즈의 자식창 열기</title>
+</head>
+<body>
+    <input type="text" id="inputWidth">
+    <input type="text" id="inputHeight">
+    <button id="btnChild">자식창 열기</button>
+    <script>
+        $(document).ready(function(){
+            var childWin;
+            $('#btnChild').click(function(){
+            // 동일한 코드 앞 자바스크립트 뒤 제이쿼리
+            // var w = document.getElementById('inputWidth').value
+            // var h = document.getElementById('inputHeight').value  
+            var w = $('#inputWidth').val();
+            var h = $('#inputHeight').val();
+
+            var minW = 400;
+            var minH = 400;
+            var maxW = 1000;
+            var maxH = 1000;
+            if(w =="" || parseInt(w) < minW)
+                w = minW;
+            else if(parseInt(w) > maxW)
+                w = maxW;
+
+            if(h =="" ||parseInt(h) < minH)
+                h = minH;
+            else if(parseInt(h) > maxH)
+                h = maxH;            
+
+
+            // if(w =="" || parseInt(w) <400)
+            //     w = 400;
+            // if(h =="" || parseInt(h) <400)
+            //     h = 400;                
+            childWin = window.open('child.1.html','child', 'width='+w+',height='+h);
+            });  
+        });  
+    </script>
+</body>
+</html>
