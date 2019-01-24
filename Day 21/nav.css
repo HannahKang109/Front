@@ -1,0 +1,51 @@
+@charset 'utf-8';
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+nav{
+    height: 40px;
+    line-height: 38px;
+    font-size: 35px;
+    text-align: center;
+}
+nav::after{
+    content:'';
+    clear: both;
+    display: block;
+}
+.nav-title{
+    text-align: center;
+}
+.ham-menu{
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+    margin-right : 10px;
+    color: #fff;
+}
+.sidebar{
+    position: absolute;
+	top: 0;
+    bottom: 0;
+    right: -200px;
+    width: 200px;
+    background-color: white;
+    border : 1px solid black;
+    z-index : 2;
+}
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+    cursor: pointer;
+}
+.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    text-align: center;
+}
+.font-black{
+    color: black;
+}
