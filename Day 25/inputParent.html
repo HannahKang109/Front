@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>부모창 조회 - 자식창 여러창에 각각 출력이 되도록 만들기</title>
+</head>
+<body>
+    <!-- <input type="text" id="insert" class="country"><br>
+    <button id="btnChild">자식창 띄우기</button><br> -->
+    <input type="text" id="insert2" class="country2"><br>
+    <button id="btnSend">조회</button><br>
+    <script>
+        $(document).ready(function(){
+            var childWin;
+            $('#btnSend').click(function(){
+                childWin = window.open('inputChild.html','child','width=400, height=500')
+            });
+            
+            /*
+            $('#btnSend').click(function(){
+                var data2 = new Array();
+                var tmpData = $('#insert').val();
+                data2.push(tmpData);
+                console.log(data2);
+                var data3 = data2.split(",");
+                console.log(data3);
+               $(childWin.document).find('.add1').val(data3); 
+            });                
+            */
+        });  
+    </script>
+</body>
+</html>

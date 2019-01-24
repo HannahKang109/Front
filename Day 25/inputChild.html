@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>부모창 조회 - 자식창 여러창에 각각 출력이 되도록 만들기</title>
+</head>
+<body>
+    <h2>가고 싶은 나라를 입력하세요!</h2>
+    <div id="inputBox"></div>
+    <button id="btnOk">확인</button>
+    <script>
+        $(document).ready(function(){
+            var oriData = $(opener.document).find('#insert2').val();
+            //split: 문자열에서 ,를 기준으로 문자열을 잘라 배열로 만드는 함수
+            var arrData = oriData.split(',');
+            // arrData = arrData.reverse();
+            var str="";
+            for(var i=0; i<arrData.length; i++){
+                str += '<input type="text" value="'+ arrData[i] +'"readonly><br>'
+            }
+            //각 창에 html코드를 넣어줌   
+            $('#inputBox').html(str);
+        });  
+    </script>
+</body>
+</html>
