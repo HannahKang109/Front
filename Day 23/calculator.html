@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>내가 만든 계산기</title>
+</head>
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.cal{
+    width: 240px;
+    height: 420px;
+    border: 1px solid black;
+}
+.box{
+    width: 240px;
+    height: 100px;
+    border: 1px solid gray;
+    text-align: right;
+    font-size: 35px;
+}
+.btn{
+    display: flex;
+}
+
+button{
+    width: 80px;
+    height: 80px;
+    border: 1px solid gray;
+    background-color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+</style>
+<body>
+    <div class="cal">
+        <input type="text" class="box">
+        <div class="btn 1">
+            <button id="7">7</button>
+            <button id="8">8</button>
+            <button id="9">9</button>
+        </div>
+        <div class="btn 2">
+            <button id="4">4</button>
+            <button id="5">5</button>
+            <button id="6">6</button>
+        </div>
+        <div class="btn 3">
+            <button id="1">1</button>
+            <button id="2">2</button>
+            <button id="3">3</button>
+        </div>
+        <div class="btn 4">
+            <button id="+-">+-</button>
+            <button id="0">0</button>
+            <button id=".">.</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                var id=$(this).prop('id');
+                console.log(id);
+                // $('input[type=text]').val(id);
+                $('input').val($('input').val() + id);
+            }); 
+        }); 
+    </script>
+</body>
+</html>
