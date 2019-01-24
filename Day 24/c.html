@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>자식창에서 선택된 국가 부모창에 표시</title>
+</head>
+<body>
+    <select id="country">
+        <option value="">국가선택</option>
+        <option value="한국">한국</option>
+        <option value="미국">미국</option>
+        <option value="중국">중국</option>
+    </select>
+    <button type="button" id="btnOk">확인</button>
+    <input type="text" id="text">
+    <script>
+        $(document).ready(function(){
+            $('#btnOk').click(function(){
+                var data = $('#country').val();
+            $(opener.document).find('#inputCountry').val(data);
+            window.close();
+            });  
+        }); 
+    </script>
+</body>
+</html>

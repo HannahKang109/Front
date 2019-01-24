@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>부모창에 자식창에서 선택된 국가 표시</title>
+</head>
+<body>
+    <h3>국가</h3>
+    <input type=text id="inputCountry" readonly>
+    <button id="countrySearch">조회</button>
+    <input type=text id="outputCountry">
+    <button id="sendSearch">전송</button>
+    <script>
+        $(document).ready(function(){
+            var childWin;
+            $('#countrySearch').click(function(){
+                childWin = window.open('c.html','child', 'width=300, height=300');
+            });
+            $('#sendSearch').click(function(){
+                
+                childWin.document.getElementById('text').value=document.getElementById('outputCountry').value;
+            });            
+            
+
+        }); 
+    </script>
+</body>
+</html>
