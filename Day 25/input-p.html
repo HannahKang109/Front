@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>자식창 확인 - 여러창에서 입력 내용이 하나로 출력되도록 만들기</title>
+</head>
+<body>
+    <input type="text" id="insert" class="country"><br>
+    <button id="btnChild">자식창열기</button><br>
+    <script>
+        $(document).ready(function(){
+            var childWin;
+            $('#btnChild').click(function(){
+                childWin = window.open('input-c.html','child','width=400, height=500')
+            });   
+            $('#insert').change(function(){
+                setTimeout(function(){
+                    //자식창 닫기
+                    childWin.close();
+                    //스스로 닫기
+                    window.close();
+                },1000);
+            });
+        });  
+    </script>
+</body>
+</html>
