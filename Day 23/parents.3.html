@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>각각의 입력창에 출력하기(선생님)</title>
+</head>
+<body>
+    <!-- name은 중복 가능 -->
+    <input type="text" id="data1" name="data1">
+    <button id="0" name="data1">자식창 열기</button>
+    <button id="1" name="data1">자식창 보내기1</button>
+    <input type="text" id="data2" name="data2">
+    <button id="2" name="data2">자식창 보내기2</button>
+    <input type="hidden" id="getId">
+    <script>
+        $(document).ready(function(){
+            var childWin;
+            $('#0').click(function(){
+                // input id와 button name을 동일하게 하여 각각의 버튼에 맞는 네임 값을 가지고 와 숨긴 input 창에 찍어줌 
+                $('#getId').val($(this).prop('name'));
+                childWin = window.open('child.3.html','child', 'width=400, height=500');
+            }); 
+            $('#1').click(function(){    
+                //childWin.document.getElementById('data').value=document.getElementById('data1').value;
+                var data = $('#data1').val();
+                $(childWin.document).find('#data').val(data);
+            });  
+            $('#2').click(function(){    
+                childWin.document.getElementById('data').value=document.getElementById('data2').value;
+            });  
+        });  
+    </script>
+</body>
+</html>

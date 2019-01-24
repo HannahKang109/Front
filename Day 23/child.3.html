@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>자식 윈도우(선생님)</title>
+</head>
+<body>
+    <input type="text" id="data">
+    <button>확인</button>
+    <script>
+        $(document).ready(function(){
+            var id = $(opener.document).find('#getId').val();
+            // var data = $(opener.document).find('#'+id).val();
+            // $('#data').val(data);
+            // console.log(id);
+            $('button').click(function(){
+            // 어느 input 창에 표시할 지 확인    
+            // var id = opener.document.getElementById('getId').value;
+            
+            // 자식창에 입력된 값을 부모창에 표시
+            // opener.document.getElementById(id).value = $('#data').val();
+            $(opener.document).find('#'+id).val($('#data').val());
+            window.close();
+            });  
+        });  
+    </script>
+</body>
+</html>
