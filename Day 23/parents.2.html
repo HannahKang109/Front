@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>각각의 입력창에 출력하기(내가한것)</title>
+</head>
+<body>
+    <input type="text" id="inputPar1">
+    <button id="btnPar">자식창 열기</button>
+    <input type="text" id="inputPar2">
+    <button id="btnPar2">자식창 열기</button>
+    <input type="text" id="inputPar3">
+    <script>
+        $(document).ready(function(){
+            var childWin;
+            var Par3 = document.getElementById('inputPar3')
+            $('#btnPar').click(function(){
+            childWin = window.open('child.2.html','child', 'width=300, height=300');
+            Par3.value=document.getElementById('inputPar1').value;
+            childWin.document.getElementById('input1').value=Par3.value;
+        }); 
+            $('#btnPar2').click(function(){
+            childWin = window.open('child.2.html','child', 'width=300, height=300');
+            Par3.value=document.getElementById('inputPar2').value;
+            childWin.document.getElementById('input1').value=Par3.value;
+        });  
+    });  
+    </script>
+</body>
+</html>

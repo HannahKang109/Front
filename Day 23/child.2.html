@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>자식 윈도우(내가한것)</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <button id="btnChild1"onclick="sendData()">확인1</button>
+    <script>
+        // $(document).ready(function(){
+
+            // $('#btnChild1').click(function(){
+                // opener.$('#inputPar').val()=$('#input1').val();
+                function sendData(){
+                opener.document.getElementById('input1').value
+             = document.getElementById('inputPar3').value;
+            }  
+        // });  
+    </script>
+</body>
+</html>
